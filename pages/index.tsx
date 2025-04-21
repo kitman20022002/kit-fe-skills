@@ -24,27 +24,27 @@ export async function getServerSideProps() {
   };
 }
 
-interface Position {
-  x: number;
-  y: number;
-}
+// interface Position {
+//   x: number;
+//   y: number;
+// }
 
-interface NodeData {
-  label: string;
-  [key: string]: any; // For any additional properties in data
-}
+// interface NodeData {
+//   label: string;
+//   [key: string]: any; // For any additional properties in data
+// }
 
-interface Node {
-  id: string;
-  data: NodeData;
-  position: Position;
-  children?: Node[];
-  parentNode?: string;
-  extent?: string;
-  style?: Record<string, any>;
-  targetPosition?: string;
-  sourcePosition?: string;
-}
+// interface Node {
+//   id: string;
+//   data: NodeData;
+//   position: Position;
+//   children?: Node[];
+//   parentNode?: string;
+//   extent?: string;
+//   style?: Record<string, any>;
+//   targetPosition?: string;
+//   sourcePosition?: string;
+// }
 
 // const initialNodes = [
 //   {
