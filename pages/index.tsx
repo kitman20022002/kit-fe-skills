@@ -7,13 +7,13 @@ import styles from "../styles/Home.module.scss";
 import Menu from "../components/Menu/Menu";
 import Category from "../components/Category/Category";
 import { getSkills } from "@/api/kitmanyiuapis";
-import {
-  Background,
-  BackgroundVariant,
-  Position,
-  ReactFlow,
-} from "@xyflow/react";
-import "@xyflow/react/dist/style.css";
+// import {
+//   Background,
+//   BackgroundVariant,
+//   Position,
+//   ReactFlow,
+// } from "@xyflow/react";
+// import "@xyflow/react/dist/style.css";
 
 export async function getServerSideProps() {
   const res: any = await getSkills();
@@ -46,206 +46,206 @@ interface Node {
   sourcePosition?: string;
 }
 
-const initialNodes = [
-  {
-    id: "5",
-    targetPosition: Position.Left,
-    sourcePosition: Position.Right,
-    position: {
-      x: -50,
-      y: 650,
-    },
-    style: {
-      width: 250,
-      height: 550,
-      backgroundColor: "rgba(240, 240, 240, 0.5)",
-      border: "1px solid #ddd",
-      borderRadius: "8px",
-    },
-    data: {
-      label: "Rabbit Broker",
-    },
-  },
-  {
-    id: "-4",
-    data: {
-      label: "AMQP",
-      note: "set of rules/protocol that defines how message work",
-    },
-  },
-  {
-    id: "0",
-    data: {
-      label: "Message",
-      note: "Send Message to rabbitMQ",
-    },
-  },
-  {
-    id: "-2",
-    data: {
-      label: "Virtual Host",
-      note: "Send Message to rabbitMQ",
-    },
-  },
-  {
-    id: "1",
-    data: {
-      label: "Producer(s)",
-      note: "Send Message to rabbitMQ",
-    },
-    children: [
-      { id: "1-1", data: { label: "Routing Key" } },
-      { id: "1-2", data: { label: "Exchange Name" } },
-      { id: "1-3", data: { label: "Message Body" } },
-      { id: "1-4", data: { label: "Message Properties(Optional)" } },
-      { id: "1-4", data: { label: "Persistent Delivery Mode(Optional)" } },
-      { id: "1-4", data: { label: "Headers(Optional)" } },
-    ],
-  },
-  {
-    id: "2",
-    data: { label: "Exchange(s)" },
-    children: [
-      { id: "2-1", data: { label: "Default Exchange" } },
-      { id: "2-2", data: { label: "Direct Exchange" } },
-      { id: "2-3", data: { label: "Fanout Exchange" } },
-      { id: "2-4", data: { label: "Topic Exchange" } },
-      { id: "2-5", data: { label: "Headers Exchange" } },
-      { id: "2-6", data: { label: "Dead Letter Exchange" } },
-      { id: "2-7", data: { label: "Delayed Exchange(Plugin)" } },
-      { id: "2-8", data: { label: "Consistent Hashing Exchange(Plugin)" } },
-      { id: "2-9", data: { label: "Sharded Exchange(Plugin)" } },
-      { id: "2-10", data: { label: "Federated Exchange(Plugin)" } },
-      { id: "2-11", data: { label: "Alternate Exchange(Plugin)" } },
-    ],
-  },
-  {
-    id: "3",
-    data: { label: "Queue(s)" },
-    children: [
-      { id: "3-1", data: { label: "Classis Queue (Durable,Exclusive)" } },
-      { id: "3-2", data: { label: "Quorum Queues" } },
-      { id: "3-3", data: { label: "Stream Queues" } },
-      { id: "3-4", data: { label: "Dead Letter Queues" } },
-      { id: "3-5", data: { label: "Sharded Queues" } },
-    ],
-  },
-  { id: "4", data: { label: "Consumer(s)" } },
-];
-const initialEdges = [
-  {
-    id: "e1-2",
-    source: "1",
-    target: "2",
-    animated: true,
-  },
-  { id: "e2-2", source: "2", target: "3", animated: true, label: "Bindings" },
-  { id: "e3-2", source: "3", target: "4", animated: true },
-];
+// const initialNodes = [
+//   {
+//     id: "5",
+//     targetPosition: Position.Left,
+//     sourcePosition: Position.Right,
+//     position: {
+//       x: -50,
+//       y: 650,
+//     },
+//     style: {
+//       width: 250,
+//       height: 550,
+//       backgroundColor: "rgba(240, 240, 240, 0.5)",
+//       border: "1px solid #ddd",
+//       borderRadius: "8px",
+//     },
+//     data: {
+//       label: "Rabbit Broker",
+//     },
+//   },
+//   {
+//     id: "-4",
+//     data: {
+//       label: "AMQP",
+//       note: "set of rules/protocol that defines how message work",
+//     },
+//   },
+//   {
+//     id: "0",
+//     data: {
+//       label: "Message",
+//       note: "Send Message to rabbitMQ",
+//     },
+//   },
+//   {
+//     id: "-2",
+//     data: {
+//       label: "Virtual Host",
+//       note: "Send Message to rabbitMQ",
+//     },
+//   },
+//   {
+//     id: "1",
+//     data: {
+//       label: "Producer(s)",
+//       note: "Send Message to rabbitMQ",
+//     },
+//     children: [
+//       { id: "1-1", data: { label: "Routing Key" } },
+//       { id: "1-2", data: { label: "Exchange Name" } },
+//       { id: "1-3", data: { label: "Message Body" } },
+//       { id: "1-4", data: { label: "Message Properties(Optional)" } },
+//       { id: "1-4", data: { label: "Persistent Delivery Mode(Optional)" } },
+//       { id: "1-4", data: { label: "Headers(Optional)" } },
+//     ],
+//   },
+//   {
+//     id: "2",
+//     data: { label: "Exchange(s)" },
+//     children: [
+//       { id: "2-1", data: { label: "Default Exchange" } },
+//       { id: "2-2", data: { label: "Direct Exchange" } },
+//       { id: "2-3", data: { label: "Fanout Exchange" } },
+//       { id: "2-4", data: { label: "Topic Exchange" } },
+//       { id: "2-5", data: { label: "Headers Exchange" } },
+//       { id: "2-6", data: { label: "Dead Letter Exchange" } },
+//       { id: "2-7", data: { label: "Delayed Exchange(Plugin)" } },
+//       { id: "2-8", data: { label: "Consistent Hashing Exchange(Plugin)" } },
+//       { id: "2-9", data: { label: "Sharded Exchange(Plugin)" } },
+//       { id: "2-10", data: { label: "Federated Exchange(Plugin)" } },
+//       { id: "2-11", data: { label: "Alternate Exchange(Plugin)" } },
+//     ],
+//   },
+//   {
+//     id: "3",
+//     data: { label: "Queue(s)" },
+//     children: [
+//       { id: "3-1", data: { label: "Classis Queue (Durable,Exclusive)" } },
+//       { id: "3-2", data: { label: "Quorum Queues" } },
+//       { id: "3-3", data: { label: "Stream Queues" } },
+//       { id: "3-4", data: { label: "Dead Letter Queues" } },
+//       { id: "3-5", data: { label: "Sharded Queues" } },
+//     ],
+//   },
+//   { id: "4", data: { label: "Consumer(s)" } },
+// ];
+// const initialEdges = [
+//   {
+//     id: "e1-2",
+//     source: "1",
+//     target: "2",
+//     animated: true,
+//   },
+//   { id: "e2-2", source: "2", target: "3", animated: true, label: "Bindings" },
+//   { id: "e3-2", source: "3", target: "4", animated: true },
+// ];
 
-const calNode = () => {
-  // Layout configuration variables
-  const CHILD_WIDTH = 200;
-  const CHILD_HEIGHT = 100;
-  const GROUP_PADDING = 40;
-  const GROUP_X_POSITION = 250;
-  const CHILD_HORIZONTAL_MARGIN = GROUP_X_POSITION + 50;
-  const CHILD_VERTICAL_MARGIN = 20;
-  const NODE_VERTICAL_SPACING = 100;
-  const GROUP_VERTICAL_MARGIN = 60;
-  const MAX_CHILDREN_PER_ROW = 3;
+// const calNode = () => {
+//   // Layout configuration variables
+//   const CHILD_WIDTH = 200;
+//   const CHILD_HEIGHT = 100;
+//   const GROUP_PADDING = 40;
+//   const GROUP_X_POSITION = 250;
+//   const CHILD_HORIZONTAL_MARGIN = GROUP_X_POSITION + 50;
+//   const CHILD_VERTICAL_MARGIN = 20;
+//   const NODE_VERTICAL_SPACING = 100;
+//   const GROUP_VERTICAL_MARGIN = 60;
+//   const MAX_CHILDREN_PER_ROW = 3;
 
-  let allNodes: Node[] = [];
-  let yOffset = 0;
+//   let allNodes: Node[] = [];
+//   let yOffset = 0;
 
-  initialNodes.forEach((item, i) => {
-    // Position the main node
+//   initialNodes.forEach((item, i) => {
+//     // Position the main node
 
-    const mainNode = item.position
-      ? item
-      : {
-          ...item,
-          position: { x: 0, y: yOffset },
-        };
+//     const mainNode = item.position
+//       ? item
+//       : {
+//           ...item,
+//           position: { x: 0, y: yOffset },
+//         };
 
-    // Remove the children array from the node we'll add to the result
-    const { children, ...nodeWithoutChildren } = mainNode;
-    allNodes.push(nodeWithoutChildren);
+//     // Remove the children array from the node we'll add to the result
+//     const { children, ...nodeWithoutChildren } = mainNode;
+//     allNodes.push(nodeWithoutChildren);
 
-    if (item.children && item.children.length > 0) {
-      // Create a group node (container box)
-      const groupId = `group-${item.id}`;
+//     if (item.children && item.children.length > 0) {
+//       // Create a group node (container box)
+//       const groupId = `group-${item.id}`;
 
-      // Calculate group dimensions
-      const numChildren = item.children.length;
-      const rows = Math.ceil(numChildren / MAX_CHILDREN_PER_ROW);
-      const cols = Math.min(numChildren, MAX_CHILDREN_PER_ROW);
-      const boxWidth = rows * CHILD_WIDTH + GROUP_PADDING;
-      const boxHeight = cols * CHILD_HEIGHT + GROUP_PADDING;
+//       // Calculate group dimensions
+//       const numChildren = item.children.length;
+//       const rows = Math.ceil(numChildren / MAX_CHILDREN_PER_ROW);
+//       const cols = Math.min(numChildren, MAX_CHILDREN_PER_ROW);
+//       const boxWidth = rows * CHILD_WIDTH + GROUP_PADDING;
+//       const boxHeight = cols * CHILD_HEIGHT + GROUP_PADDING;
 
-      // Create the group/container node
-      const groupNode = {
-        id: groupId,
-        targetPosition: Position.Left,
-        sourcePosition: Position.Right,
-        position: {
-          x: GROUP_X_POSITION,
-          y: yOffset - CHILD_VERTICAL_MARGIN,
-        },
-        style: {
-          width: boxWidth,
-          height: boxHeight,
-          backgroundColor: "rgba(240, 240, 240, 0.5)",
-          border: "1px solid #ddd",
-          borderRadius: "8px",
-        },
-        data: {
-          label: "",
-        },
-      };
-      allNodes.push(groupNode);
+//       // Create the group/container node
+//       const groupNode = {
+//         id: groupId,
+//         targetPosition: Position.Left,
+//         sourcePosition: Position.Right,
+//         position: {
+//           x: GROUP_X_POSITION,
+//           y: yOffset - CHILD_VERTICAL_MARGIN,
+//         },
+//         style: {
+//           width: boxWidth,
+//           height: boxHeight,
+//           backgroundColor: "rgba(240, 240, 240, 0.5)",
+//           border: "1px solid #ddd",
+//           borderRadius: "8px",
+//         },
+//         data: {
+//           label: "",
+//         },
+//       };
+//       allNodes.push(groupNode);
 
-      // Add connection from main node to group
-      initialEdges.push({
-        id: `e-${item.id}-${groupId}`,
-        source: item.id,
-        target: groupId,
-        animated: true,
-      });
+//       // Add connection from main node to group
+//       initialEdges.push({
+//         id: `e-${item.id}-${groupId}`,
+//         source: item.id,
+//         target: groupId,
+//         animated: true,
+//       });
 
-      // Position and add the children inside the group
-      item.children.forEach((child, childIndex) => {
-        const row = Math.floor(childIndex / MAX_CHILDREN_PER_ROW);
-        const col = childIndex % MAX_CHILDREN_PER_ROW;
+//       // Position and add the children inside the group
+//       item.children.forEach((child, childIndex) => {
+//         const row = Math.floor(childIndex / MAX_CHILDREN_PER_ROW);
+//         const col = childIndex % MAX_CHILDREN_PER_ROW;
 
-        const childNode = {
-          ...child,
-          parentNode: groupId,
-          extent: "parent",
-          position: {
-            x: row * CHILD_WIDTH + CHILD_HORIZONTAL_MARGIN,
-            y: col * CHILD_HEIGHT + CHILD_VERTICAL_MARGIN + yOffset,
-          },
-        };
+//         const childNode = {
+//           ...child,
+//           parentNode: groupId,
+//           extent: "parent",
+//           position: {
+//             x: row * CHILD_WIDTH + CHILD_HORIZONTAL_MARGIN,
+//             y: col * CHILD_HEIGHT + CHILD_VERTICAL_MARGIN + yOffset,
+//           },
+//         };
 
-        allNodes.push(childNode);
-      });
+//         allNodes.push(childNode);
+//       });
 
-      // Update yOffset to account for the group height
-      yOffset += boxHeight + GROUP_VERTICAL_MARGIN;
-    } else {
-      // For nodes without children, just add standard spacing
-      yOffset += NODE_VERTICAL_SPACING;
-    }
-  });
+//       // Update yOffset to account for the group height
+//       yOffset += boxHeight + GROUP_VERTICAL_MARGIN;
+//     } else {
+//       // For nodes without children, just add standard spacing
+//       yOffset += NODE_VERTICAL_SPACING;
+//     }
+//   });
 
-  return allNodes;
-};
+//   return allNodes;
+// };
 
 const Home: NextPage = (props: any) => {
   const { skillsData } = props;
 
-  const nodes = calNode();
+  // const nodes = calNode();
 
   let i = 1;
   return (
